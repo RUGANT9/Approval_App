@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create test</title>
+  <style>
+    body{font-family:sans-serif;margin:2rem;}
+    input{margin:.25rem .5rem;width:6rem;}
+    button{padding:.4rem .8rem;}
+    a{margin-left:.5rem;}
+  </style>
+</head>
+<body>
+  <h1>Generate a parametrised test</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for cat,msg in messages %}
+        <p style="color:{{'green' if cat=='success' else 'red'}}">{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="post">
+      <label>A: <input type="number" name="a" required></label>
+      <label>B: <input type="number" name="b" required></label>
+      <button type="submit">Generate tests</button>
+      <a href="{{ url_for('main.latest') }}">View latest ➜</a>
+  </form>
+</body>
+</html>

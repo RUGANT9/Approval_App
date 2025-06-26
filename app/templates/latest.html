@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Latest generated test</title>
+  <style>
+    pre{background:#111;color:#0f0;padding:1em;overflow:auto;}
+    button{padding:.4rem .8rem;}
+    a{margin-left:.75rem;}
+  </style>
+</head>
+<body>
+  <h1>Latest generated test</h1>
+  <form action="{{ url_for('main.approve') }}" method="post" style="display:inline;">
+     <button type="submit">✅ Approve & Push</button>
+  </form>
+  <a href="{{ url_for('main.generate') }}">← New test</a>
+  <h2>{{ gen_path }}</h2>
+  <pre>{{ content }}</pre>
+</body>
+</html>
