@@ -1,7 +1,8 @@
 name: Nightly Test Run
 on:
   schedule:
-    - cron: '35 18 * * *'  # Runs every day at 18:26 UTC (6:26 PM)
+    - cron: '10 19 * * *'  # Runs every day at 19:10 UTC (6:26 PM)
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
